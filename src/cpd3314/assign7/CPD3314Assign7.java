@@ -24,7 +24,7 @@
 package cpd3314.assign7;
 
 /**
- * @author <ENTER YOUR NAME HERE>
+ * @author YATIN PATEL
  */
 public class CPD3314Assign7 {
 

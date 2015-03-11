@@ -52,8 +52,94 @@ package cpd3314.assign7;
  */
 
 /**
- * @author <ENTER YOUR NAME HERE>
+ * @author YATIN PATEL
  */
 public class ArrayUtil2D {
     
+    public double getTotal(double[][] grid){
+        int count=0;
+     
+    for(int i=0;i<grid.length;i++)
+    {
+    for(int j=0; j<grid[i].length;j++)
+    {    
+        count+=grid[i][j];
+    }        
+    }  
+    return count;
+    }
+  public double getAverage(double[][] grid)
+    {
+    double count=0;
+    double avg;
+    double sum=0;
+    
+    
+    
+    for(int i=0;i<grid.length;i++)
+ {
+        sum += grid[i].length;
+        
+    for(int j=0; j<grid[i].length;j++)
+    {
+     count+=grid[i][j];  
+    }
+        
+ }
+    avg = count/sum;
+    return avg;
+    }
+     public double getRowTotal(double myarr[][],int x)
+     {
+     double  count=0;
+         
+     for(int i =0; i<myarr[x].length;i++)
+     {
+     count = count + myarr[x][i];    
+     }
+     return count;
+     }
+    
+   
+     public double getColumnTotal(double ar[][],int k)
+     {
+     double s=0;
+     
+     for(int i =0; i<ar.length;i++)
+    {
+     s = s + ar[i][k];    
+     }
+     return s;
+     }
+     
+     
+     public double getHighestInRow(double arra[][],int x)
+     {
+     double max = arra[x][0];
+  
+     for(int i =0;i<arra.length;i++)
+     {
+        if(arra[x][i]>max)
+         {
+         max = arra[x][i];
+         } 
+     }
+     return max;
+     }
+     
+     
+     public double getLowestInRow(double arra[][],int x)
+     {
+     double min = arra[x][0];
+     
+     for(int i =0;i<arra.length;i++)
+     {
+         if(arra[x][i]<min)
+         {
+         min = arra[x][i];
+         } 
+     }
+     return min;
+     }
 }
+

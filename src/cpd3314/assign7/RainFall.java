@@ -42,8 +42,78 @@ package cpd3314.assign7;
  * - Gaddis pg. 490
  */
 /**
- * @author <ENTER YOUR NAME HERE>
+ * @author YATIN PATEL
  */
 public class RainFall {
+    
+    double[] month = new double[12];
+    public double setRainfall(int x , double y)
+    {
+        double rainfall;
+        
+         month[x] = month[x] + y;
+        rainfall = month[x];
+
+        return rainfall;
+}
+      public double getRainfall(int z) {
+
+        double retrive_rain = month[z];
+
+        return retrive_rain;
+}  
+        public double getTotal() {
+        double sum = 0;
+
+        for (double t : month) {
+
+            sum = sum + t;
+        }
+
+        return sum;
+      
+}
+         public double getAverage() {
+
+        double sum = 0;
+
+        for (double t : month) {
+
+            sum = sum + t;
+        }
+
+        double avg = sum / 12;
+        return avg;
+    }
+
+    public double getMax() {
+        double max = month[0];
+
+        for (int i = 0; i < month.length; i++) {
+            if (month[i] > max) {
+
+                max = i;
+            }
+
+        }
+
+        return max;
+    }
+
+    public double getMin() {
+        double min = month[0];
+
+        for (int i = 0; i < month.length; i++) {
+            if (month[i] < min) {
+
+                min = i;
+            }
+
+        }
+
+        return min;
+    }
 
 }
+
+

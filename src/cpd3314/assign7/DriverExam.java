@@ -20,7 +20,6 @@
  * Objects. (5th ed.). Upper Saddle River, NJ: Pearson Education. 
  * ISBN: 978-0-13-285583-9 
  */
-
 package cpd3314.assign7;
 
 /* Exercise #5 - Driver's License Exam
@@ -51,8 +50,81 @@ package cpd3314.assign7;
  * - Gaddis pg. 491
  */
 /**
- * @author <ENTER YOUR NAME HERE>
+ * @author YATIN PATEL
  */
 public class DriverExam {
+
+    private char[] ans = {'B', 'D', 'A', 'A', 'C', 'A', 'B', 'A', 'C', 'D', 'B', 'C', 'D', 'A', 'D', 'C', 'C', 'B', 'D', 'A'};
+    private int count = 0;
+    private int countwrong = 0;
+    private char newseries[] = new char[20];
+
+    public void setAnswer(int x, char y) {
+
+        newseries[x - 1] = y;
+
+    }
+
+    public boolean passed() {
+
+        for (int i = 0; i < newseries.length; i++) {
+            if (ans[i] == newseries[i]) {
+
+                count += 1;
+            }
+        }
+
+        if (count < 15) {
+            return false;
+        }
+        return true;
+    }
+
+    public int totalCorrect() {
+        for (int i = 0; i < newseries.length; i++) {
+            if (ans[i] == newseries[i]) {
+
+                count += 1;
+            }
+        }
+
+        return count;
+    }
+
+    public int totalIncorrect() {
+
+        for (int i = 0; i < newseries.length; i++) {
+            if (ans[i] != newseries[i]) {
+
+                countwrong += 1;
+            }
+        }
+
+        return countwrong;
+    }
+
+    public int[] questionsMissed() {
+
+        int[] temp = new int[20];
+        int[] missedseries;
+        int j = 0;
+        for (int i = 0; i < newseries.length; i++) {
+
+            if (newseries[i] != ans[i]) {
+                temp[j] = i + 1;
+
+                j += 1;
+
+            }
+        }
+
+        missedseries = new int[j];
+
+        for (int k = 0; k < j; k++) {
+            missedseries[k] = temp[k];
+        }
+
+        return missedseries;
+    }
 
 }
